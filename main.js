@@ -152,12 +152,11 @@ function initCursor() {
   const cur = document.getElementById("cursor");
   const fol = document.getElementById("cursor-follower");
 
-  // If touch device → hide custom cursor and activate premium touch ripple instead
+  // On touch devices → hide the custom cursor entirely, no effect needed
   const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
   if (isTouch) {
     if (cur) cur.style.display = "none";
     if (fol) fol.style.display = "none";
-    initTouchRipple();
     return;
   }
 
@@ -179,80 +178,6 @@ function initCursor() {
       fol.style.width = "36px"; fol.style.height = "36px";
     });
   });
-}
-
-/* ══ TOUCH PARTICLES ══ */
-function initTouchRipple() {
-  const canvas = document.createElement("canvas");
-  canvas.id = "touch-canvas";
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;";
-  document.body.appendChild(canvas);
-  const ctx = canvas.getContext("2d");
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener("resize", resize, { passive: true });
-
-  const particles = [];
-  const COLORS = ["#c82b2b", "#e8443a", "#f5a623", "#fff0e6", "#a01818"];
-
-  class Particle {
-    constructor(x, y) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 1.5 + Math.random() * 4;
-      this.x = x;
-      this.y = y;
-      this.vx = Math.cos(angle) * speed;
-      this.vy = Math.sin(angle) * speed - 1.5;
-      this.alpha = 1;
-      this.size = 2 + Math.random() * 3.5;
-      this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.gravity = 0.12;
-      this.decay = 0.04 + Math.random() * 0.03;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.vy += this.gravity;
-      this.vx *= 0.97;
-      this.alpha -= this.decay;
-    }
-    draw() {
-      ctx.globalAlpha = Math.max(0, this.alpha);
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function spawnParticles(x, y) {
-    const count = 14 + Math.floor(Math.random() * 8);
-    for (let i = 0; i < count; i++) particles.push(new Particle(x, y));
-  }
-
-  let animating = false;
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = particles.length - 1; i >= 0; i--) {
-      particles[i].update();
-      particles[i].draw();
-      if (particles[i].alpha <= 0) particles.splice(i, 1);
-    }
-    ctx.globalAlpha = 1;
-    if (particles.length > 0) requestAnimationFrame(animate);
-    else animating = false;
-  }
-
-  document.addEventListener("touchstart", e => {
-    Array.from(e.changedTouches).forEach(touch => {
-      spawnParticles(touch.clientX, touch.clientY);
-    });
-    if (!animating) { animating = true; animate(); }
-  }, { passive: true });
 }
 
 /* ══ NAV ══ */
