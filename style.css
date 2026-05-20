@@ -988,13 +988,13 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.18)}
     overflow: hidden;
   }
 
-  /* ── Single CTA button only ── */
+  /* ── CTA Buttons ── */
   .hero-actions {
     justify-content: center;
     width: 100%;
     flex-direction: column;
-    gap: 0.7rem;
-    margin-bottom: 1.4rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 
   /* Show ghost button as secondary action */
@@ -1003,6 +1003,9 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.18)}
     width: 100%;
     justify-content: center;
     border-radius: 100px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
     padding: 0.85rem 2rem;
     font-size: 0.68rem;
     letter-spacing: 0.2em;
@@ -1040,19 +1043,9 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.18)}
   .btn-primary:hover::after { transform: skewX(-20deg) translateX(120%); }
   .btn-primary:hover { transform: translateY(-2px); }
 
-  /* ── Stats Bar — compact ── */
+  /* ── Stats Bar — hidden on mobile for cleaner look ── */
   .hero-stats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    width: 100%;
-    background: rgba(12,8,6,0.45);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    padding: 0.8rem 0.5rem;
+    display: none;
     box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   }
   .stat {
