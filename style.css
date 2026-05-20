@@ -994,6 +994,7 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,.18)}
     width: 100%;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 3rem;
     margin-bottom: 2rem;
   }
 
