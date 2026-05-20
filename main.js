@@ -10,6 +10,12 @@ window.addEventListener("load", () => {
 });
 
 function initAll() {
+  // Reset scroll to top on every fresh page load, clear any hash
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+  }
+  window.scrollTo(0, 0);
+
   const tryInit = (fn) => { try { fn(); } catch(e) { console.error('Error in', fn.name, e); } };
   
   tryInit(initCursor);
