@@ -1,0 +1,24 @@
+{
+  "name": "amigo-group-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amroju/Amigo-Group.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Amroju/Amigo-Group/issues"
+  },
+  "homepage": "https://github.com/Amroju/Amigo-Group#readme",
+  "dependencies": {
+    "jimp": "^0.22.10"
+  }
+}
