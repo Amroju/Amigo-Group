@@ -28,6 +28,7 @@ function initAll() {
   tryInit(initForm);
   tryInit(initReviewsCarousel);
   tryInit(initProductScroll);
+  tryInit(initVideoLoopFix);
   tryInit(initVideoModal);
   tryInit(initFaq);
   tryInit(initFloatNav);
@@ -115,6 +116,22 @@ function initFaq() {
       if (!isOpen) {
         btn.setAttribute('aria-expanded', 'true');
         answer.classList.add('open');
+      }
+    });
+  });
+}
+
+/* ══ BACKGROUND VIDEO LOOP FIX ══ */
+function initVideoLoopFix() {
+  document.querySelectorAll('video[loop]').forEach(vid => {
+    vid.addEventListener('ended', () => {
+      vid.currentTime = 0;
+      vid.play().catch(e => console.log("Auto-play prevented", e));
+    });
+    // Extra safety: if paused unexpectedly (e.g. iOS low power mode), try to resume if it's intersecting
+    vid.addEventListener('pause', () => {
+      if (vid.currentTime > 0 && !vid.ended) {
+        vid.play().catch(() => {});
       }
     });
   });
