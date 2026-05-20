@@ -151,6 +151,16 @@ function initVideoModal() {
 function initCursor() {
   const cur = document.getElementById("cursor");
   const fol = document.getElementById("cursor-follower");
+
+  // If touch device → hide custom cursor and activate premium touch ripple instead
+  const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  if (isTouch) {
+    if (cur) cur.style.display = "none";
+    if (fol) fol.style.display = "none";
+    initTouchRipple();
+    return;
+  }
+
   let mx = 0, my = 0, fx = 0, fy = 0;
   document.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
   (function loop() {
@@ -169,6 +179,21 @@ function initCursor() {
       fol.style.width = "36px"; fol.style.height = "36px";
     });
   });
+}
+
+/* ══ TOUCH RIPPLE ══ */
+function initTouchRipple() {
+  document.addEventListener("touchstart", e => {
+    Array.from(e.changedTouches).forEach(touch => {
+      const ripple = document.createElement("span");
+      ripple.className = "touch-ripple";
+      ripple.style.left = touch.clientX + "px";
+      ripple.style.top  = touch.clientY + "px";
+      document.body.appendChild(ripple);
+      // Remove after animation ends
+      ripple.addEventListener("animationend", () => ripple.remove());
+    });
+  }, { passive: true });
 }
 
 /* ══ NAV ══ */
