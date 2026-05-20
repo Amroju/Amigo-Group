@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Amigo Group | L'Eccellenza dello Shawarma Artigianale in Italia</title>
+  <meta name="description" content="Porta l'autentico Shawarma Artigianale nel tuo locale. Diventa il N°1 nella tua zona con la qualità superiore di Amigo Group. 100% Halal, consegna in tutta Italia."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">YA</div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- FLOATING LOGO -->
+<a href="#hero" class="float-logo" id="float-logo" aria-label="Amigo Group – torna in cima">
+  <img src="assets/logo_black_bg.png" alt="Amigo Group Logo" class="float-logo-img"/>
+  <span class="float-logo-brand">AMIGO <span class="red-text">GROUP</span></span>
+</a>
+
+
+
+
+
+<!-- FLOATING SECTION NAV -->
+<div id="float-nav" class="float-nav">
+  <div class="float-nav-menu" id="float-nav-menu">
+    <a href="#hero" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span>
+      <span class="float-nav-label">Home</span>
+    </a>
+    <a href="#about" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+      <span class="float-nav-label">Chi Siamo</span>
+    </a>
+    <a href="#product" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
+      <span class="float-nav-label">Il Prodotto</span>
+    </a>
+    <a href="#video" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg></span>
+      <span class="float-nav-label">Video</span>
+    </a>
+    <a href="#reviews" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+      <span class="float-nav-label">Recensioni</span>
+    </a>
+    <a href="#faq" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+      <span class="float-nav-label">FAQ</span>
+    </a>
+    <a href="#contact" class="float-nav-item">
+      <span class="float-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+      <span class="float-nav-label">Contatto</span>
+    </a>
+  </div>
+  <button class="float-nav-toggle" id="float-nav-toggle" aria-label="Naviga sezioni">
+    <span class="float-nav-toggle-icon float-nav-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+    <span class="float-nav-toggle-icon float-nav-close" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+  </button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="grain"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tag reveal-up">SOLO PER TITOLARI DI KEBAB, LOCALI, RISTORANTI E FAST-FOOD</div>
+      <h1 class="hero-title">
+        <span class="reveal-up" style="--d:0.1s">Porta nel tuo locale</span>
+        <em class="reveal-up" style="--d:0.25s">lo Shawarma</em>
+        <span class="reveal-up" style="--d:0.4s">Artigianale</span>
+      </h1>
+      <p class="hero-sub reveal-up" style="--d:0.5s">
+        Diventa il <strong>N°1</strong> della tua zona con gli spiedi pronti da cuocere di Amigo Group. Qualità autentica, certificazione Halal, consegna nazionale.
+      </p>
+      <div class="hero-actions reveal-up" style="--d:0.65s">
+        <a href="#contact" class="btn-primary">
+          <span>Richiedi la tua zona</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#video" class="btn-ghost">Guarda il Video</a>
+      </div>
+      <div class="hero-stats reveal-up" style="--d:0.8s">
+        <div class="stat">
+          <span class="stat-num" data-count="2000">0</span><span class="stat-sym">+</span>
+          <p>Recensioni</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="4.9">0</span><span class="stat-sym">★</span>
+          <p>Rating</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span style="font-family:var(--font-serif);font-size:2.2rem;color:var(--green-light)">100%</span><p>Halal</p></div>
+      </div>
+    </div>
+    <div class="hero-image-col reveal-right" style="--d:0.3s">
+      <div class="hero-img-wrap">
+        <div class="hero-img-glow"></div>
+        <img src="assets/shawarma_skewer.png" alt="Spiedo shawarma artigianale Amigo Group"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>Scopri di più</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-about">
+  <div class="about-grid">
+    <div class="about-image-col">
+      <div class="about-img-wrap">
+        <img src="assets/shawarma_close.png" alt="Shawarma artigianale close-up" class="about-img"/>
+        <div class="about-img-overlay"></div>
+        <div class="about-badge">
+          <span class="badge-num">15+</span>
+          <span class="badge-text">Anni di<br/>Esperienza</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <div class="section-tag reveal-left">Chi Siamo</div>
+      <h2 class="section-title reveal-left" style="--d:0.1s">
+        L'Arte dello<br/><span class="accent-text">Shawarma</span><br/>Tradizionale
+      </h2>
+      <p class="about-desc reveal-left" style="--d:0.2s">
+        Amigo Group nasce dalla passione per la cucina mediorientale autentica. Produciamo spiedi di shawarma artigianale con carni selezionate e spezie originali, pronti da cuocere direttamente nel tuo locale.
+      </p>
+      <p class="about-desc reveal-left" style="--d:0.3s">
+        La nostra missione: <strong>aiutare i ristoratori in italia</strong> ad offrire un prodotto di qualità superiore che conquista i clienti al primo assaggio.
+      </p>
+      <div class="about-features reveal-left" style="--d:0.4s">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          </div>
+          <div><h4>Carne Premium</h4><p>Selezione rigorosa delle migliori carni</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M5 12c2 0 4-1 5.5-2.5"/><path d="M19 12c-2 0-4-1-5.5-2.5"/></svg>
+          </div>
+          <div><h4>Spezie Originali</h4><p>Ricetta tradizionale autentica</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div><h4>100% Halal</h4><p>Certificato e garantito</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div><h4>Consegna Nazionale</h4><p>Spedizione in tutta Italia</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product" class="section-product">
+  <div class="product-bg-text">SHAWARMA</div>
+  <canvas id="product-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="product-content">
+    <div class="section-tag reveal-up">Il Prodotto</div>
+    <h2 class="section-title text-center reveal-up" style="--d:0.1s">
+      Lo Spiedo Perfetto<br/>per il tuo <span class="accent-text">Locale</span>
+    </h2>
+    <div class="product-cards">
+      <div class="product-card reveal-up" style="--d:0.2s">
+        <div class="card-bg-num">01</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Pronto da Cuocere</h3>
+        <p>Ricevi lo spiedo già assemblato. Cuoci e servi in pochi minuti.</p>
+      </div>
+      <div class="product-card reveal-up" style="--d:0.35s">
+        <div class="card-bg-num">02</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <h3>Qualità Superiore</h3>
+        <p>Carni premium e spezie originali. Un sapore autentico e inconfondibile.</p>
+      </div>
+      <div class="product-card reveal-up" style="--d:0.5s">
+        <div class="card-bg-num">03</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13"/><path d="M13 3l3 6-4 13"/></svg>
+        </div>
+        <h3>Scorte Limitate</h3>
+        <p>Produzione artigianale esclusiva. Serviamo solo un numero ristretto di locali.</p>
+      </div>
+    </div>
+    
+    <!-- Mobile Scroll Indicators -->
+    <div class="product-cards-footer reveal-up" style="--d:0.6s">
+      <div class="scroll-hint-text">Scorri per vedere di più</div>
+      <div class="product-dots">
+        <span class="p-dot active"></span>
+        <span class="p-dot"></span>
+        <span class="p-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX -->
+<div class="parallax-section" id="parallax-div">
+  <video class="parallax-bg" src="assets/video.mov" autoplay loop muted playsinline></video>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content">
+    <p class="parallax-quote">"Carne di un altro livello rispetto ai soliti posti"</p>
+    <span class="parallax-sub">- I nostri clienti su Google</span>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<section id="video" class="section-video">
+  <div class="grain"></div>
+  <div class="video-content">
+    <div class="section-tag reveal-up text-center">Il Nostro Video</div>
+    <h2 class="section-title text-center reveal-up" style="--d:0.1s">
+      Scopri Come Funziona<br/><span class="accent-text">Amigo Group</span>
+    </h2>
+    <p class="video-desc reveal-up" style="--d:0.2s">
+      Guarda il video per capire esattamente come possiamo trasformare il tuo locale con il nostro shawarma artigianale.
+    </p>
+    <div class="video-frame-wrap reveal-up" style="--d:0.3s">
+      <div class="video-responsive">
+        <iframe
+          src="https://www.youtube.com/embed/PsedNm9wKIQ?rel=0&modestbranding=1&color=white"
+          title="Lo Shawarma Artigianale nel tuo locale – Amigo Group"
+          frameborder="0"
+          allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
+          allowfullscreen loading="lazy"
+        ></iframe>
+      </div>
+      <div class="video-corner tl"></div>
+      <div class="video-corner tr"></div>
+      <div class="video-corner bl"></div>
+      <div class="video-corner br"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (Google Maps – reali) -->
+<section id="reviews" class="section-reviews">
+  <div class="reviews-header">
+    <div class="section-tag reveal-up">Recensioni Google</div>
+    <h2 class="section-title reveal-up" style="--d:0.1s">
+      Cosa Dicono i<br/><span class="accent-text">Nostri Clienti</span>
+    </h2>
+  </div>
+  <div class="reviews-overall reveal-up" style="--d:0.2s">
+    <span class="reviews-score">4.9</span>
+    <div class="reviews-meta">
+      <span class="reviews-stars">★★★★★</span>
+      <span class="reviews-count">Basato su oltre 2.000 recensioni Google</span>
+    </div>
+  </div>
+
+  <!-- Carousel wrapper -->
+  <div class="reviews-carousel-wrap reveal-up" style="--d:0.3s">
+    <button class="carousel-btn carousel-prev" id="rev-prev" aria-label="Precedente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="reviews-track-outer">
+      <div class="reviews-track" id="reviews-track">
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">MF</div>
+            <div><div class="review-name">Michele F.</div><div class="review-date">1 mese fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Lo shawarma migliore che abbia mai mangiato in Italia. La carne è succosa, le spezie perfettamente bilanciate. Tornerò sicuramente!"</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">LC</div>
+            <div><div class="review-name">Laura C.</div><div class="review-date">2 settimane fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Finalmente uno shawarma autentico a Verona! Carne di qualità, porzioni generose e personale gentilissimo. Consigliatissimo!"</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">AR</div>
+            <div><div class="review-name">Ahmed R.</div><div class="review-date">3 settimane fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Il posto migliore per shawarma in città. Halal certificato, ingredienti freschi ogni giorno. Lo consiglio a tutti!"</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">GP</div>
+            <div><div class="review-name">Giovanni P.</div><div class="review-date">1 mese fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Incredibile! Mai mangiato uno shawarma così buono. La marinatura della carne è fantastica, si sente la qualità degli ingredienti."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">SK</div>
+            <div><div class="review-name">Sara K.</div><div class="review-date">2 mesi fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Qualità eccezionale! Il mio locale ha visto un aumento clienti enorme da quando uso i loro spiedi. Consegna puntuale e prodotto sempre fresco."</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card-top">
+            <div class="review-avatar">FM</div>
+            <div><div class="review-name">Fabio M.</div><div class="review-date">3 mesi fa</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Ho provato tanti fornitori ma Yalla Amigo è su un altro livello. Il sapore è autentico e i clienti non smettono di chiederne."</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn carousel-next" id="rev-next" aria-label="Successivo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+  <!-- Dot indicators -->
+  <div class="carousel-dots" id="carousel-dots"></div>
+
+  <div class="reviews-google-link reveal-up" style="--d:0.5s">
+    <a href="https://share.google/iXR4MGxG2USxPPrkQ" target="_blank" rel="noopener">
+      Leggi tutte le recensioni su Google →
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-contact">
+
+<!-- FAQ -->
+<section id="faq" class="section-faq">
+  <div class="grain"></div>
+  <div class="faq-content">
+    <div class="section-tag reveal-up">FAQ</div>
+    <h2 class="section-title reveal-up" style="--d:0.1s">
+      Domande<br/><span class="accent-text">Frequenti</span>
+    </h2>
+    <p class="faq-subtitle reveal-up" style="--d:0.2s">
+      Tutto ciò che devi sapere prima di iniziare la partnership con noi.
+    </p>
+
+    <div class="faq-list reveal-up" style="--d:0.3s">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Come avviene la consegna?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p>Consegniamo in tutta Italia tramite corrieri refrigerati specializzati. I prodotti arrivano pronti da cuocere, mantenendo intatta la freschezza e la qualità artigianale fino alla tua cucina.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Qual è il quantitativo minimo di ordine?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p>Il quantitativo minimo varia in base alla zona e alla tipologia di prodotto. Contattaci direttamente per ricevere un'offerta personalizzata in base alle tue esigenze di locale.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>È possibile effettuare un ordine di prova?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p>Sì, certamente! Siamo felici di darti la possibilità di testare la nostra qualità. Contattaci e ci accorderemo insieme su tutti i dettagli per organizzare il tuo ordine di prova.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Quanto durano i prodotti?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p>I nostri spiedi si conservano fino a 12 mesi in congelatore e fino a 4 giorni in frigorifero dopo lo scongelamento. Ogni prodotto riporta chiaramente la data di scadenza e le istruzioni di conservazione.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Fornite assistenza su come cuocere e tagliare lo shawarma?</span>
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </button>
+        <div class="faq-answer">
+          <p>Assolutamente sì! Il nostro servizio va oltre la fornitura della carne. Condividiamo con i nostri clienti i segreti per una cottura uniforme e un taglio perfetto, aiutandoti a massimizzare la resa del prodotto e garantire il miglior sapore.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section-contact">
+  <div class="grain"></div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="section-tag reveal-left">Contattaci</div>
+      <h2 class="section-title reveal-left" style="--d:0.1s">
+        Verifica se la tua<br/><span class="accent-text">Zona è Libera</span>
+      </h2>
+      <p class="contact-desc reveal-left" style="--d:0.2s">
+        Le zone disponibili sono limitate. Compila il modulo e ti contatteremo entro <strong>24 ore</strong> per verificare la disponibilità nella tua area.
+      </p>
+
+      <div class="contact-trust reveal-left" style="--d:0.4s">
+        <div class="trust-badge"><span class="red-text">✓</span> Risposta entro 24h</div>
+        <div class="trust-badge"><span class="red-text">✓</span> Nessun obbligo</div>
+        <div class="trust-badge"><span class="red-text">✓</span> 100% Confidenziale</div>
+      </div>
+    </div>
+    <div class="contact-right reveal-right" style="--d:0.2s">
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="nome">Nome e Cognome *</label>
+          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required/>
+        </div>
+        <div class="form-group">
+          <label for="locale">Nome del Locale *</label>
+          <input type="text" id="locale" name="locale" placeholder="Nome del tuo ristorante" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefono">Telefono *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+39 000 0000000" required/>
+          </div>
+          <div class="form-group">
+            <label for="citta">Città *</label>
+            <input type="text" id="citta" name="citta" placeholder="La tua città" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@tuolocale.it"/>
+        </div>
+        <div class="form-group">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="4" placeholder="Raccontaci del tuo locale..."></textarea>
+        </div>
+        <div class="form-group form-privacy">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <input type="checkbox" id="privacy" name="privacy" required/>
+            <label for="privacy">
+              Accetto i <a href="https://amigogroup.it/termini-e-condizioni" target="_blank" class="red-text">Termini e Condizioni</a> e confermo di aver letto la <a href="https://www.iubenda.com/privacy-policy/41310788" target="_blank" class="red-text">Privacy Policy</a>. Fornendo il mio numero di telefono, acconsento a essere ricontattato per ricevere informazioni sulla fornitura.
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary btn-full" id="form-submit">
+          <span>Richiedi Informazioni</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="form-success" id="form-success"><span>✓</span> Grazie! Ti contatteremo entro 24 ore.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/logo_black_bg.png" alt="Amigo Group" class="footer-logo"/>
+      <span class="footer-name">AMIGO <span class="red-text">GROUP</span></span>
+    </div>
+    <nav class="footer-nav">
+      <a href="#hero">Home</a>
+      <a href="#about">Chi Siamo</a>
+      <a href="#product">Il Prodotto</a>
+      <a href="#video">Video</a>
+      <a href="#reviews">Recensioni</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contatto</a>
+    </nav>
+  </div>
+  
+  <div class="footer-legal">
+    <a href="https://www.iubenda.com/privacy-policy/41310788" target="_blank">Privacy Policy</a>
+    <span class="footer-dot">•</span>
+    <a href="https://www.iubenda.com/privacy-policy/41310788/cookie-policy" target="_blank">Cookie Policy</a>
+    <span class="footer-dot">•</span>
+    <a href="https://amigogroup.it/termini-e-condizioni" target="_blank">Termini e Condizioni</a>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <div class="footer-info">
+      <p>Yalla Amigo — Piazza Cittadella, 14, 37122 Verona VR — P.IVA IT04898300233</p>
+      <p>Tutti i Diritti sono riservati. È vietata qualsiasi riproduzione, anche parziale.</p>
+    </div>
+    
+    <div class="footer-disclaimer">
+      <p>This Website is not part of Facebook or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT (Scroll Reveal) -->
+<a href="https://wa.me/393486995079?text=Ciao!%20Sarei%20interessato%20a%20ricevere%20maggiori%20informazioni%20sui%20vostri%20spiedi%20di%20shawarma." class="wa-float" id="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <div class="video-modal-content">
+    <button class="video-modal-close" id="videoModalClose" aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="video-modal-frame">
+      <iframe id="videoModalIframe"
+        src=""
+        title="Amigo Group – Il nostro shawarma artigianale"
+        frameborder="0"
+        allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
